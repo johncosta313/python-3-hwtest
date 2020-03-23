@@ -21,12 +21,25 @@ with open(budget_data, newline = "") as csvfile:
     value = int(first_row[1])
 
     for row in csvreader:
-            dates.append(row[0])
+        dates.append(row[0])
 
-            change = int(row[1])-value
-            profits.append(change)
-            value = int(row[1])
+        change = int(row[1])-value
+        profits.append(change)
+        value = int(row[1])
 
-            total_months +=1
+        total_months +=1
 
-            
+        total_pl = total_pl +int(row[1])
+    
+    greatestincrease = max(profits)
+    greatestindex + profits.index(greatestincrease)
+    greatestdate = dates[greatestindex]
+
+    greatestdecrease = min(profits)
+    worstindex = profits.index(greatestdecrease) 
+    worstdate = dates[worstindex]   
+
+    avg_change = sum(profits)/len(profits)
+
+    
+
