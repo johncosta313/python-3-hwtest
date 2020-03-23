@@ -32,7 +32,7 @@ with open(budget_data, newline = "") as csvfile:
         total_pl = total_pl +int(row[1])
     
     greatestincrease = max(profits)
-    greatestindex + profits.index(greatestincrease)
+    greatestindex = profits.index(greatestincrease)
     greatestdate = dates[greatestindex]
 
     greatestdecrease = min(profits)
@@ -41,5 +41,21 @@ with open(budget_data, newline = "") as csvfile:
 
     avg_change = sum(profits)/len(profits)
 
-    
+print("Financial Analysis")    
+print("----------")
+print(f"total months: {str(total_months)}")
+print(f"total:${str(total_pl)}")
+print(f"Average Change: ${str(round(avg_change,2))}")
+print(f"Greatest Increase in profits: {greatestdate}(${str(greatestincrease)})")
+print(f"Greatest Decrease in profits: {worstdate}(${str(greatestdecrease)})")
+
+output = open("results", "w")
+line1 = "Financial Analysis"
+line2 = ("----------")
+line3 = (f"total months: {str(total_months)}")
+line4 = (f"total:${str(total_pl)}")
+line5 = (f"Average Change: ${str(round(avg_change,2))}")
+line6 = (f"Greatest Increase in profits: {greatestdate}(${str(greatestincrease)})")
+line7 = (f"Greatest Decrease in profits: {worstdate}(${str(greatestdecrease)})")
+output.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7))
 
