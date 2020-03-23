@@ -15,4 +15,18 @@ with open(budget_data, newline = "") as csvfile:
 
     csv_header = next(csvreader)
 
-    
+    first_row = next(csvreader)
+    total_months +=1
+    total_pl += int(first_row[1])
+    value = int(first_row[1])
+
+    for row in csvreader:
+            dates.append(row[0])
+
+            change = int(row[1])-value
+            profits.append(change)
+            value = int(row[1])
+
+            total_months +=1
+
+            
