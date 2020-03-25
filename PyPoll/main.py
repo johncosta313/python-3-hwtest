@@ -2,17 +2,9 @@ import os
 import csv
 
 election_data = os.path.join("election_data.csv")
-
-
 candidates = []
-
-
 num_votes = []
-
-
 percent_votes = []
-
-
 total_votes = 0
 
 with open(election_data, newline = "") as csvfile:
@@ -73,3 +65,4 @@ line5 = "--------------------------"
 line6 = str(f"Winner: {winning_candidate}")
 line7 = "--------------------------"
 output.write('{}\n{}\n{}\n'.format(line5, line6, line7))
+
