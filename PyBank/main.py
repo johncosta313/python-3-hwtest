@@ -59,3 +59,5 @@ line6 = (f"Greatest Increase in profits: {greatestdate}(${str(greatestincrease)}
 line7 = (f"Greatest Decrease in profits: {worstdate}(${str(greatestdecrease)})")
 output.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7))
 
+
+
